@@ -7,7 +7,7 @@ jobs:
       name: 'Terraform'
       runs-on: ubuntu-latest
       env:
-        working-directory: eks 
+        working-directory: infrastructure 
       defaults:
         run:
           shell: bash
