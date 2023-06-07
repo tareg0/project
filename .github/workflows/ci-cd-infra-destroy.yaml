@@ -1,4 +1,4 @@
-name: "Terraform CI/CD DESTROY Infra"
+name: "Terraform CI-CD DESTROY Infra"
 
 on: workflow_dispatch
 
