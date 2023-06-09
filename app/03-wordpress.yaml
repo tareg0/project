@@ -9,7 +9,7 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP #default
-      nodePort: 31005
+      nodePort: 31000
   type: LoadBalancer
 ---
 
@@ -34,10 +34,7 @@ spec: # specification for deployment resource
         - containerPort: 80
         env:
         - name: WORDPRESS_DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: mariadb-configmap
-              key: database_url
+          value: mariadb-service
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:

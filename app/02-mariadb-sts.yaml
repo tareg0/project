@@ -40,6 +40,9 @@ spec:
             secretKeyRef:
               name: mariadb-secret
               key: mariadb-root-password
+        # Create DB for wordpress      
+        - name: MARIADB_DATABASE
+          value: wordpress      
         volumeMounts:
         - name: datadir
           mountPath: /var/lib/mysql/
