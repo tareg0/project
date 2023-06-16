@@ -34,7 +34,7 @@ spec: # specification for deployment resource
         - containerPort: 80
         env:
         - name: WORDPRESS_DB_HOST
-          value: mariadb-service
+          value: mariadb-sts-0.mariadb-service
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
