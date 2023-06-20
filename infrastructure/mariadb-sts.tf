@@ -82,12 +82,12 @@ resource "kubernetes_stateful_set" "mariadb_sts" {
 
         volume {
           name      = "mariadb-config"
-          empty_dir = {}
+          #empty_dir = {}
         }
 
         volume {
           name      = "initdb"
-          empty_dir = {}
+          #empty_dir = {}
         }
 
         init_container {
