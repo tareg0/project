@@ -6,10 +6,11 @@ spec:
   selector:
     app: wordpress
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80 
-  type: NodePort
+    - port: 80
+      targetPort: 80
+      protocol: TCP #default
+      nodePort: 31000
+  type: LoadBalancer
 ---
 
 apiVersion: apps/v1
@@ -17,7 +18,7 @@ kind: Deployment
 metadata:
   name: wordpress-deployment
 spec: # specification for deployment resource
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: wordpress

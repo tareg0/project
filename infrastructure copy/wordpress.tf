@@ -9,13 +9,14 @@ resource "kubernetes_service" "wordpress" {
       protocol    = "TCP"
       port        = 80
       target_port = "80"
+      node_port   = 31000
     }
 
     selector = {
       app = "wordpress"
     }
 
-    type = "NodePort"
+    type = "LoadBalancer"
   }
 }
 
@@ -25,7 +26,7 @@ resource "kubernetes_deployment" "wordpress_deployment" {
   }
 
   spec {
-    replicas = 3
+    replicas = 1
 
     selector {
       match_labels = {
